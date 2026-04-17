@@ -3,85 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galeria zdjęć</title>
+<title>Belvedere — Produkcja Wideo</title>
 
 <style>
-body {
+/* RESET */
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f2f2f2;
   color: #222;
+  line-height: 1.6;
+  padding-bottom: 60px;
 }
 
-h1 {
+/* HEADER */
+header {
+  background: #111;
+  color: white;
+  padding: 25px 20px;
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
+/* SECTIONS */
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
 }
 
-.gallery img:hover {
-  transform: scale(1.03);
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #111;
 }
 
-/* LIGHTBOX */
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: white;
+  font-size: 14px;
+  margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Galeria zdjęć</h1>
+<header>
+  Belvedere — Produkcja Wideo
+</header>
 
-<div class="gallery">
-<img src="photos/*" onclick="openLightbox('photos/*')">
+<div class="section">
+
+  <div class="card">
+    <h2>O nas</h2>
+    <p>
+      Belvedere to profesjonalna produkcja wideo i obsługa wydarzeń.  
+      Strona została odbudowana od zera w stabilnej, lekkiej wersji — bez galerii, zdjęć i elementów, które mogły powodować błędy.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Usługi</h2>
+    <p>
+      • Produkcja wideo<br>
+      • Montaż i postprodukcja<br>
+      • Realizacje promocyjne<br>
+      • Obsługa eventów<br>
+      • Materiały reklamowe
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Kontakt</h2>
+    <p>
+      Napisz lub zadzwoń, aby omówić projekt.<br><br>
+      Telefon: <strong>+48 000 000 000</strong><br>
+      E-mail: <strong>kontakt@belvedere.pl</strong>
+    </p>
+  </div>
+
 </div>
 
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightboxImg">
-</div>
-
-<script>
-function openLightbox(src) {
-  const lb = document.getElementById('lightbox');
-  const img = document.getElementById('lightboxImg');
-  img.src = src;
-  lb.style.display = 'flex';
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
-}
-</script>
+<footer>
+  © 2026 Belvedere — Wszystkie prawa zastrzeżone
+</footer>
 
 </body>
 </html>
