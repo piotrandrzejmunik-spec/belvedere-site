@@ -12,6 +12,7 @@
       --light: #1e293b;
       --accent: #1e3a8a;
       --messenger-blue: #0084ff;
+      --gold: #facc15;
     }
 
     * {
@@ -38,34 +39,6 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 24px 16px 48px;
-    }
-
-    /* LANGUAGE SWITCHER */
-    .lang-switch {
-      position: fixed;
-      top: 16px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-      background: rgba(30, 41, 59, 0.7);
-      padding: 6px 10px;
-      border-radius: 8px;
-      border: 1px solid #334155;
-      backdrop-filter: blur(6px);
-      z-index: 999;
-    }
-
-    .lang-switch span {
-      cursor: pointer;
-      color: #cbd5e1;
-      transition: color 0.2s ease;
-    }
-
-    .lang-switch span.active {
-      color: var(--green);
-      font-weight: 700;
     }
 
     header {
@@ -157,7 +130,75 @@
       color: #cbd5e1;
     }
 
-    /* MESSENGER BUTTON */
+    /* GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #1f2937;
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .review-card {
+      background: #111827;
+      border-radius: 12px;
+      padding: 14px 14px 16px;
+      border: 1px solid #1f2937;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .review-text {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    .review-author {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* CONTACT + MESSENGER */
+    .contact-box {
+      background: #020617;
+      border-radius: 12px;
+      padding: 18px 16px;
+      border: 1px solid #1f2937;
+    }
+
+    .contact-strong {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
     .messenger-btn {
       display: inline-flex;
       align-items: center;
@@ -205,53 +246,55 @@
       text-transform: uppercase;
     }
 
-    .bottom-cta {
-      margin-top: 40px;
-      text-align: center;
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- LANGUAGE SWITCH -->
-  <div class="lang-switch">
-    🌐
-    <span id="lang-en" class="active">EN</span> |
-    <span id="lang-pl">PL</span>
-  </div>
-
   <div class="wrapper">
 
     <header class="reveal">
-      <h1 data-i18n="header_title">BELVEDERE GARDEN DESIGN LIMITED</h1>
-      <p data-i18n="header_sub">Transforming outdoor spaces across Glasgow & surrounding areas.</p>
+      <h1>BELVEDERE GARDEN DESIGN LIMITED</h1>
+      <p>Transforming outdoor spaces across Glasgow & surrounding areas.</p>
     </header>
 
     <section class="hero reveal">
-      <h2 data-i18n="hero_title">Beautiful Gardens. Professional Work.</h2>
-      <p class="hero-areas" data-i18n="hero_areas">Serving Glasgow, Paisley, East Renfrewshire & Ayrshire.</p>
-      <p data-i18n="hero_text">Tired of a messy or outdated garden? BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces that last.</p>
-      <p class="cta" data-i18n="hero_call">Call / WhatsApp: <a href="tel:07922571998">07922571998</a></p>
+      <h2>Beautiful Gardens. Professional Work.</h2>
+      <p class="hero-areas">Serving Glasgow, Paisley, East Renfrewshire & Ayrshire.</p>
+      <p>Tired of a messy or outdated garden? BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces that last.</p>
+      <p class="cta">Call / WhatsApp: <a href="tel:07922571998">07922571998</a></p>
     </section>
 
     <section class="reveal">
-      <h3 data-i18n="sec1_title">Your Garden Doesn’t Have to Look Like This.</h3>
-      <p data-i18n="sec1_text">BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces across Glasgow.</p>
+      <h3>Your Garden Doesn’t Have to Look Like This.</h3>
+      <p>BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces across Glasgow.</p>
       <ul class="list">
-        <li data-i18n="service1">🌿 Garden Makeovers</li>
-        <li data-i18n="service2">🌱 Artificial & Natural Grass</li>
-        <li data-i18n="service3">🪵 Composite Decking</li>
-        <li data-i18n="service4">🧱 Fencing</li>
-        <li data-i18n="service5">💧 Drainage Solutions</li>
+        <li>🌿 Garden Makeovers</li>
+        <li>🌱 Artificial & Natural Grass</li>
+        <li>🪵 Composite Decking</li>
+        <li>🧱 Fencing</li>
+        <li>💧 Drainage Solutions</li>
       </ul>
-      <p data-i18n="sec1_bottom">Strong workmanship. Local team. Results that speak for themselves.</p>
-      <p class="cta" data-i18n="sec1_call">Message us: <a href="tel:07922571998">07922571998</a></p>
+      <p>Strong workmanship. Local team. Results that speak for themselves.</p>
+      <p class="cta">Message us: <a href="tel:07922571998">07922571998</a></p>
     </section>
 
     <section class="reveal">
-      <h3 data-i18n="about_title">About Us</h3>
-      <p data-i18n="about_text">
+      <h3>About Us</h3>
+      <p>
         BELVEDERE GARDEN DESIGN LIMITED delivers high‑quality landscaping and garden transformations across Glasgow and nearby areas.
         From small garden upgrades to full outdoor renovations, every project is completed with precision,
         care, and long‑lasting workmanship.
@@ -259,130 +302,84 @@
     </section>
 
     <section class="reveal">
-      <h3 data-i18n="why_title">Why Choose Us?</h3>
+      <h3>Why Choose Us?</h3>
       <ul class="list">
-        <li data-i18n="why1">Experienced local landscaping team</li>
-        <li data-i18n="why2">Reliable scheduling</li>
-        <li data-i18n="why3">Clear, transparent pricing</li>
-        <li data-i18n="why4">High‑quality materials</li>
-        <li data-i18n="why5">Clean and respectful on site</li>
-        <li data-i18n="why6">Strong track record across Glasgow</li>
+        <li>Experienced local landscaping team</li>
+        <li>Reliable scheduling</li>
+        <li>Clear, transparent pricing</li>
+        <li>High‑quality materials</li>
+        <li>Clean and respectful on site</li>
+        <li>Strong track record across Glasgow</li>
       </ul>
     </section>
 
+    <!-- GALLERY -->
     <section class="reveal">
-      <h3 data-i18n="contact_title">Contact</h3>
-      <div class="contact-box">
-        <p data-i18n="contact_ready">Ready to improve your garden?</p>
-        <p class="contact-strong" data-i18n="contact_call">Call / WhatsApp: <a href="tel:07922571998">07922571998</a></p>
-        <p class="contact-strong" data-i18n="contact_email">Email: [Your Email]</p>
+      <h3>Gallery</h3>
+      <p>Recent projects and transformations delivered by BELVEDERE GARDEN DESIGN LIMITED.</p>
+      <div class="gallery-grid">
+        <img src="photos/1.jpg" alt="Project photo 1">
+        <img src="photos/2.jpg" alt="Project photo 2">
+        <img src="photos/3.jpg" alt="Project photo 3">
+        <img src="photos/4.jpg" alt="Project photo 4">
+        <img src="photos/5.jpg" alt="Project photo 5">
+        <img src="photos/6.jpg" alt="Project photo 6">
+        <img src="photos/7.jpg" alt="Project photo 7">
+        <img src="photos/8.jpg" alt="Project photo 8">
+      </div>
+    </section>
 
-        <!-- Messenger Button -->
-        <a href="https://m.me/111871660581412" class="messenger-btn" data-i18n="messenger_btn">
+    <!-- REVIEWS -->
+    <section class="reveal">
+      <h3>Reviews</h3>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “Belvedere transformed our garden in Glasgow — the result is stunning.”
+          </p>
+          <p class="review-author">Homeowner in Glasgow</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “Great communication, solid work, and fair pricing.”
+          </p>
+          <p class="review-author">Landscaping client</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            “Our decking and grass look perfect. Highly recommended.”
+          </p>
+          <p class="review-author">Garden renovation client</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="reveal">
+      <h3>Contact</h3>
+      <div class="contact-box">
+        <p>Ready to improve your garden?</p>
+        <p class="contact-strong">Call / WhatsApp: <a href="tel:07922571998">07922571998</a></p>
+        <p class="contact-strong">Email: [Your Email]</p>
+
+        <!-- Single Messenger Button -->
+        <a href="https://m.me/111871660581412" class="messenger-btn">
           <span class="messenger-icon"></span>
           Message on Messenger
         </a>
       </div>
     </section>
 
-    <!-- Bottom CTA Messenger -->
-    <div class="bottom-cta reveal">
-      <a href="https://m.me/111871660581412" class="messenger-btn" data-i18n="messenger_btn">
-        <span class="messenger-icon"></span>
-        Message on Messenger
-      </a>
-    </div>
-
-    <footer class="reveal" data-i18n="footer">
+    <footer class="reveal">
       BELVEDERE GARDEN DESIGN LIMITED · Glasgow
     </footer>
 
   </div>
 
   <script>
-    const translations = {
-      en: {
-        header_title: "BELVEDERE GARDEN DESIGN LIMITED",
-        header_sub: "Transforming outdoor spaces across Glasgow & surrounding areas.",
-        hero_title: "Beautiful Gardens. Professional Work.",
-        hero_areas: "Serving Glasgow, Paisley, East Renfrewshire & Ayrshire.",
-        hero_text: "Tired of a messy or outdated garden? BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces that last.",
-        hero_call: "Call / WhatsApp: <a href='tel:07922571998'>07922571998</a>",
-        sec1_title: "Your Garden Doesn’t Have to Look Like This.",
-        sec1_text: "BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces across Glasgow.",
-        service1: "🌿 Garden Makeovers",
-        service2: "🌱 Artificial & Natural Grass",
-        service3: "🪵 Composite Decking",
-        service4: "🧱 Fencing",
-        service5: "💧 Drainage Solutions",
-        sec1_bottom: "Strong workmanship. Local team. Results that speak for themselves.",
-        sec1_call: "Message us: <a href='tel:07922571998'>07922571998</a>",
-        about_title: "About Us",
-        about_text: "BELVEDERE GARDEN DESIGN LIMITED delivers high‑quality landscaping and garden transformations across Glasgow and nearby areas. From small garden upgrades to full outdoor renovations, every project is completed with precision, care, and long‑lasting workmanship.",
-        why_title: "Why Choose Us?",
-        why1: "Experienced local landscaping team",
-        why2: "Reliable scheduling",
-        why3: "Clear, transparent pricing",
-        why4: "High‑quality materials",
-        why5: "Clean and respectful on site",
-        why6: "Strong track record across Glasgow",
-        contact_title: "Contact",
-        contact_ready: "Ready to improve your garden?",
-        contact_call: "Call / WhatsApp: <a href='tel:07922571998'>07922571998</a>",
-        contact_email: "Email: [Your Email]",
-        messenger_btn: "Message on Messenger",
-        footer: "BELVEDERE GARDEN DESIGN LIMITED · Glasgow"
-      },
-
-      pl: {
-        header_title: "BELVEDERE GARDEN DESIGN LIMITED",
-        header_sub: "Profesjonalna transformacja ogrodów w Glasgow i okolicach.",
-        hero_title: "Piękne Ogrody. Profesjonalne Wykonanie.",
-        hero_areas: "Obsługujemy Glasgow, Paisley, East Renfrewshire i Ayrshire.",
-        hero_text: "Masz dość zaniedbanego lub przestarzałego ogrodu? BELVEDERE GARDEN DESIGN LIMITED tworzy nowoczesne, estetyczne i trwałe przestrzenie zewnętrzne.",
-        hero_call: "Zadzwoń / WhatsApp: <a href='tel:07922571998'>07922571998</a>",
-        sec1_title: "Twój Ogród Nie Musi Tak Wyglądać.",
-        sec1_text: "BELVEDERE GARDEN DESIGN LIMITED tworzy czyste, nowoczesne i funkcjonalne ogrody na terenie Glasgow.",
-        service1: "🌿 Kompleksowe Metamorfozy Ogrodów",
-        service2: "🌱 Trawa Sztuczna i Naturalna",
-        service3: "🪵 Tarasy Kompozytowe",
-        service4: "🧱 Ogrodzenia Drewniane i Kompozytowe",
-        service5: "💧 Rozwiązania Drenażowe",
-        sec1_bottom: "Solidne wykonanie. Lokalny zespół. Rezultaty, które mówią same za siebie.",
-        sec1_call: "Napisz do nas: <a href='tel:07922571998'>07922571998</a>",
-        about_title: "O Nas",
-        about_text: "BELVEDERE GARDEN DESIGN LIMITED realizuje wysokiej jakości projekty ogrodowe i kompleksowe modernizacje terenów zielonych w Glasgow i okolicach. Od drobnych ulepszeń po pełne renowacje — każdy projekt wykonujemy z precyzją, dbałością i trwałością.",
-        why_title: "Dlaczego My?",
-        why1: "Doświadczony lokalny zespół",
-        why2: "Terminowość i rzetelność",
-        why3: "Przejrzyste i uczciwe wyceny",
-        why4: "Materiały wysokiej jakości",
-        why5: "Czystość i porządek na miejscu pracy",
-        why6: "Silna reputacja na terenie Glasgow",
-        contact_title: "Kontakt",
-        contact_ready: "Gotowy na poprawę swojego ogrodu?",
-        contact_call: "Zadzwoń / WhatsApp: <a href='tel:07922571998'>07922571998</a>",
-        contact_email: "Email: [Twój Email]",
-        messenger_btn: "Napisz na Messengerze",
-        footer: "BELVEDERE GARDEN DESIGN LIMITED · Glasgow"
-      }
-    };
-
-    function applyLanguage(lang) {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        el.innerHTML = translations[lang][key];
-      });
-
-      document.getElementById("lang-en").classList.toggle("active", lang === "en");
-      document.getElementById("lang-pl").classList.toggle("active", lang === "pl");
-    }
-
-    document.getElementById("lang-en").onclick = () => applyLanguage("en");
-    document.getElementById("lang-pl").onclick = () => applyLanguage("pl");
-
-    applyLanguage("en");
-
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -392,6 +389,5 @@
 
     reveals.forEach(el => observer.observe(el));
   </script>
-
 </body>
 </html>
