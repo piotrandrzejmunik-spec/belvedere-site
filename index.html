@@ -11,6 +11,7 @@
       --dark: #0f172a;
       --light: #1e293b;
       --accent: #1e3a8a;
+      --messenger-blue: #0084ff;
     }
 
     * {
@@ -156,12 +157,57 @@
       color: #cbd5e1;
     }
 
+    /* MESSENGER BUTTON */
+    .messenger-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1e293b;
+      border: 1px solid var(--messenger-blue);
+      padding: 10px 16px;
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .messenger-btn:hover {
+      background: #0f172a;
+      transform: translateY(-3px);
+    }
+
+    .messenger-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      background: var(--messenger-blue);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .messenger-icon::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      clip-path: polygon(0 100%, 0 40%, 40% 0, 100% 60%, 60% 100%);
+    }
+
     footer {
       margin-top: 32px;
       font-size: 0.85rem;
       color: #64748b;
       text-align: center;
       text-transform: uppercase;
+    }
+
+    .bottom-cta {
+      margin-top: 40px;
+      text-align: center;
     }
   </style>
 </head>
@@ -230,8 +276,22 @@
         <p data-i18n="contact_ready">Ready to improve your garden?</p>
         <p class="contact-strong" data-i18n="contact_call">Call / WhatsApp: <a href="tel:07922571998">07922571998</a></p>
         <p class="contact-strong" data-i18n="contact_email">Email: [Your Email]</p>
+
+        <!-- Messenger Button -->
+        <a href="https://m.me/111871660581412" class="messenger-btn" data-i18n="messenger_btn">
+          <span class="messenger-icon"></span>
+          Message on Messenger
+        </a>
       </div>
     </section>
+
+    <!-- Bottom CTA Messenger -->
+    <div class="bottom-cta reveal">
+      <a href="https://m.me/111871660581412" class="messenger-btn" data-i18n="messenger_btn">
+        <span class="messenger-icon"></span>
+        Message on Messenger
+      </a>
+    </div>
 
     <footer class="reveal" data-i18n="footer">
       BELVEDERE GARDEN DESIGN LIMITED · Glasgow
@@ -270,6 +330,7 @@
         contact_ready: "Ready to improve your garden?",
         contact_call: "Call / WhatsApp: <a href='tel:07922571998'>07922571998</a>",
         contact_email: "Email: [Your Email]",
+        messenger_btn: "Message on Messenger",
         footer: "BELVEDERE GARDEN DESIGN LIMITED · Glasgow"
       },
 
@@ -302,6 +363,7 @@
         contact_ready: "Gotowy na poprawę swojego ogrodu?",
         contact_call: "Zadzwoń / WhatsApp: <a href='tel:07922571998'>07922571998</a>",
         contact_email: "Email: [Twój Email]",
+        messenger_btn: "Napisz na Messengerze",
         footer: "BELVEDERE GARDEN DESIGN LIMITED · Glasgow"
       }
     };
