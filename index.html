@@ -1,110 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belvedere Landscaping</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background: #2e7d32;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 42px;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-        }
-
-        section {
-            background: white;
-            margin: 20px auto;
-            padding: 30px;
-            max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: #2e7d32;
-            margin-top: 0;
-        }
-
-        ul.services li {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>BELVEDERE GARDEN DESIGN LIMITED | Glasgow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --green: #2f7b4f;
+      --dark: #1f2933;
+      --light: #f5f7fa;
+      --accent: #e2f3ea;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body {
+      background: #ffffff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    header {
+      padding: 16px 0 32px;
+      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 32px;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    header p {
+      color: #4b5563;
+      margin-top: 4px;
+    }
+    .hero {
+      background: var(--accent);
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-bottom: 32px;
+    }
+    .hero h2 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .hero p {
+      margin-bottom: 8px;
+      color: #374151;
+    }
+    .hero-areas {
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .cta {
+      font-weight: 600;
+      color: var(--green);
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    section p {
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .service-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px 12px;
+      background: #ffffff;
+    }
+    .service-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+      color: var(--green);
+    }
+    .service-card p {
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+    .list {
+      list-style: none;
+      margin-top: 8px;
+    }
+    .list li::before {
+      content: "• ";
+      color: var(--green);
+      font-weight: 700;
+    }
+    .list li {
+      margin-bottom: 4px;
+      color: #4b5563;
+    }
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+    .review-card {
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      padding: 12px 12px;
+      background: #ffffff;
+      font-size: 0.95rem;
+    }
+    .review-stars {
+      color: #f59e0b;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+    .contact-box {
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 18px 16px;
+      background: var(--light);
+    }
+    .contact-box p {
+      margin-bottom: 6px;
+    }
+    .contact-strong {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    footer {
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    @media (min-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrapper">
+    <header>
+      <h1>BELVEDERE GARDEN DESIGN LIMITED</h1>
+      <p>Transforming outdoor spaces across Glasgow &amp; surrounding areas.</p>
+    </header>
 
-<header>
-    <h1>Belvedere Landscaping</h1>
-    <p>Professional garden and green space maintenance</p>
-</header>
+    <section class="hero">
+      <h2>Beautiful Gardens. Professional Work.</h2>
+      <p class="hero-areas">Serving Glasgow, Paisley, East Renfrewshire &amp; Ayrshire.</p>
+      <p>Tired of a messy or outdated garden? BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces that last.</p>
+      <p class="cta">Call / WhatsApp: <strong>[Your Number]</strong></p>
+    </section>
 
-<section>
-    <h2>About Us</h2>
-    <p>
-        Belvedere is a professional landscaping and garden care company operating in Glasgow and surrounding areas.
-        We provide complete maintenance for gardens, green spaces, and outdoor areas for homes and businesses.
-        Quality, reliability, and professionalism are at the core of what we do.
-    </p>
-</section>
+    <section>
+      <h3>Your Garden Doesn’t Have to Look Like This.</h3>
+      <p>BELVEDERE GARDEN DESIGN LIMITED creates clean, modern outdoor spaces across Glasgow.</p>
+      <ul class="list">
+        <li>🌿 Garden Makeovers</li>
+        <li>🌱 Artificial &amp; Natural Grass</li>
+        <li>🪵 Composite Decking</li>
+        <li>🧱 Fencing</li>
+        <li>💧 Drainage Solutions</li>
+      </ul>
+      <p>Strong workmanship. Local team. Results that speak for themselves.</p>
+      <p class="cta">Message us to get started: <strong>[Your Number]</strong></p>
+    </section>
 
-<section>
-    <h2>Services</h2>
-    <ul class="services">
-        <li>✔ Grass cutting</li>
-        <li>✔ Hedge and tree trimming</li>
-        <li>✔ Weed control and bed maintenance</li>
-        <li>✔ Garden and green area clean‑ups</li>
-        <li>✔ Winter garden preparation</li>
-        <li>✔ Regular seasonal maintenance</li>
-    </ul>
-</section>
+    <section>
+      <h3>About Us</h3>
+      <p>
+        BELVEDERE GARDEN DESIGN LIMITED delivers high‑quality landscaping and garden transformations across Glasgow and nearby areas.
+        From small garden upgrades to full outdoor renovations, every project is completed with precision,
+        care, and long‑lasting workmanship.
+      </p>
+    </section>
 
-<section>
-    <h2>Why Choose Us?</h2>
-    <p>
-        • Experienced and professional<br>
-        • Modern equipment<br>
-        • Fast and reliable service<br>
-        • Individual approach to every client<br>
-        • Clear pricing and honest communication
-    </p>
-</section>
+    <section>
+      <h3>Services</h3>
+      <div class="services-grid">
+        <div class="service-card">
+          <h4>Garden Makeovers</h4>
+          <p>Complete transformations — design, preparation, and full installation.</p>
+        </div>
+        <div class="service-card">
+          <h4>Artificial &amp; Natural Grass</h4>
+          <p>Perfectly level surfaces, durable installation, and premium materials.</p>
+        </div>
+        <div class="service-card">
+          <h4>Composite Decking</h4>
+          <p>Weather‑resistant decking ideal for Scottish weather.</p>
+        </div>
+        <div class="service-card">
+          <h4>Fencing</h4>
+          <p>Wooden and composite fencing, installed straight, secure, and built to last.</p>
+        </div>
+        <div class="service-card">
+          <h4>Drainage Solutions</h4>
+          <p>Drainage and water management to eliminate flooding and muddy areas.</p>
+        </div>
+      </div>
+    </section>
 
-<section>
-    <h2>Contact</h2>
-    <p>📞 Phone: <strong>+44 0000 000000</strong></p>
-    <p>📧 Email: <strong>contact@belvedere.com</strong></p>
-</section>
+    <section>
+      <h3>Before &amp; After</h3>
+      <p>Insert project photos here — ideally 3 strong before/after sets.</p>
+      <ul class="list">
+        <li>Before → After</li>
+        <li>Before → After</li>
+        <li>Before → After</li>
+      </ul>
+    </section>
 
-<footer>
-    © 2026 Belvedere Landscaping — All rights reserved
-</footer>
+    <section>
+      <h3>Why Choose Us?</h3>
+      <ul class="list">
+        <li>Experienced local landscaping team</li>
+        <li>Reliable scheduling</li>
+        <li>Clear, transparent pricing</li>
+        <li>High‑quality materials</li>
+        <li>Clean and respectful on site</li>
+        <li>Strong track record across Glasgow</li>
+      </ul>
+    </section>
 
+    <section>
+      <h3>Reviews</h3>
+      <div class="reviews">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“BELVEDERE GARDEN DESIGN LIMITED transformed our garden in Glasgow — the result is stunning.”</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Great communication, solid work, and fair pricing.”</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Our decking and grass look perfect. Highly recommended.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Contact</h3>
+      <div class="contact-box">
+        <p>Ready to improve your garden?</p>
+        <p class="contact-strong">Call / WhatsApp: [Your Number]</p>
+        <p class="contact-strong">Email: [Your Email]</p>
+      </div>
+    </section>
+
+    <footer>
+      BELVEDERE GARDEN DESIGN LIMITED · Glasgow
+    </footer>
+  </div>
 </body>
 </html>
