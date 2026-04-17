@@ -1,13 +1,5 @@
-<div class="video-grid">
-<div class="video-item"><video autoplay muted loop playsinline controls><source src="videos/1.mp4" type="video/mp4"></video></div>
-<div class="video-item"><video autoplay muted loop playsinline controls><source src="videos/2.mp4" type="video/mp4"></video></div>
-<div class="video-item"><video autoplay muted loop playsinline controls><source src="videos/3.mp4" type="video/mp4"></video></div>
-<div class="video-item"><video autoplay muted loop playsinline controls><source src="videos/4.mp4" type="video/mp4"></video></div>
-<div class="video-item"><video autoplay muted loop playsinline controls><source src="videos/5.mp4" type="video/mp4"></video></div>
-<div class="video-item"><video autoplay muted loop playsinline controls><source src="videos/6.mp4" type="video/mp4"></video></div>
 </div>
 <style>
-.video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 15px;
@@ -18,3 +10,11 @@
   border-radius: 10px;
 }
 </style>
+<div class="videos-clean">
+<video preload="none" controls style="width:100%;margin-bottom:20px;"><source src="videos/1.mp4" type="video/mp4"></video>
+<video preload="none" controls style="width:100%;margin-bottom:20px;"><source src="videos/2.mp4" type="video/mp4"></video>
+<video preload="none" controls style="width:100%;margin-bottom:20px;"><source src="videos/3.mp4" type="video/mp4"></video>
+<video preload="none" controls style="width:100%;margin-bottom:20px;"><source src="videos/4.mp4" type="video/mp4"></video>
+<video preload="none" controls style="width:100%;margin-bottom:20px;"><source src="videos/5.mp4" type="video/mp4"></video>
+<video preload="none" controls style="width:100%;margin-bottom:20px;"><source src="videos/6.mp4" type="video/mp4"></video>
+</div>
