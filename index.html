@@ -130,15 +130,12 @@
       color: #cbd5e1;
     }
 
-    /* GALLERY */
-    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       margin-top: 12px;
     }
 
-    .gallery-grid img {
       width: 100%;
       height: 180px;
       object-fit: cover;
@@ -148,7 +145,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .gallery-grid img:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
@@ -247,7 +243,6 @@
     }
 
     @media (max-width: 900px) {
-      .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .reviews-grid {
@@ -256,7 +251,6 @@
     }
 
     @media (max-width: 640px) {
-      .gallery-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -313,19 +307,8 @@
       </ul>
     </section>
 
-    <!-- GALLERY -->
     <section class="reveal">
-      <h3>Gallery</h3>
       <p>Recent projects and transformations delivered by BELVEDERE GARDEN DESIGN LIMITED.</p>
-      <div class="gallery-grid">
-        <img src="photos/1.jpg" alt="Project photo 1">
-        <img src="photos/2.jpg" alt="Project photo 2">
-        <img src="photos/3.jpg" alt="Project photo 3">
-        <img src="photos/4.jpg" alt="Project photo 4">
-        <img src="photos/5.jpg" alt="Project photo 5">
-        <img src="photos/6.jpg" alt="Project photo 6">
-        <img src="photos/7.jpg" alt="Project photo 7">
-        <img src="photos/8.jpg" alt="Project photo 8">
       </div>
     </section>
 
