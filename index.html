@@ -1,46 +1,767 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Belvedere Landscaping</title> <style> body { margin: 0; font-family: Arial, sans-serif; color: #222; background: #fff; } header { background: url('hero.jpg') center/cover no-repeat; padding: 120px 20px; text-align: center; color: white; } header h1 { font-size: 48px; margin: 0; } header p { font-size: 20px; margin-top: 10px; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belvedere Landscaping | Premium Garden Transformations in Scotland</title>
 
-.section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-.section h2 { text-align: center; font-size: 36px; margin-bottom: 40px; }
+  <!-- SEO -->
+  <meta name="description" content="Belvedere Landscaping delivers premium garden transformations, patios, decking and full outdoor renovations across Scotland." />
+  <meta name="keywords" content="landscaping, garden design, patios, decking, fencing, Scotland" />
+  <meta name="author" content="Belvedere Landscaping" />
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.service-box { padding: 30px; border-radius: 12px; background: #f7f7f7; box-shadow: 0 4px 12px rgba(0,0,0,0.06); text-align: center; }
-.service-box h3 { margin-bottom: 10px; font-size: 22px; }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Belvedere Landscaping | Premium Garden Transformations" />
+  <meta property="og:description" content="See our real projects, videos and client testimonials. Book a professional on-site visit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://belvedere-site.pages.dev/" />
+  <meta property="og:image" content="hero.jpg" />
 
-.video-gallery { padding: 80px 20px; max-width: 1200px; margin: auto; }
-.video-gallery h2 { text-align: center; font-size: 36px; margin-bottom: 40px; }
-.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-.video-grid video { width: 100%; border-radius: 14px; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.pricing { background: #fafafa; padding: 80px 20px; }
-.pricing-box { max-width: 600px; margin: auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.08); text-align: center; }
-.pricing-box h3 { font-size: 28px; margin-bottom: 20px; }
-.pricing-box p { font-size: 18px; margin-bottom: 20px; }
-.pricing-box a { display: inline-block; padding: 14px 28px; background: #2e7d32; color: white; border-radius: 8px; text-decoration: none; font-size: 18px; }
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --primary: #1f7a4d;
+      --primary-dark: #145236;
+      --accent: #f3b340;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.16);
+      --shadow-light: 0 8px 24px rgba(15, 23, 42, 0.10);
+      --transition-fast: 0.2s ease-out;
+    }
 
-.faq-item { margin-bottom: 20px; }
-.faq-item h4 { font-size: 22px; margin-bottom: 8px; }
+    * {
+      box-sizing: border-box;
+    }
 
-#contact { padding: 80px 20px; text-align: center; background: #f7f7f7; }
-#contact h2 { font-size: 36px; margin-bottom: 20px; }
-#contact p { font-size: 20px; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-footer { padding: 40px 20px; text-align: center; background: #111; color: white; font-size: 16px; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-</style> </head> <body>
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 50;
+    }
 
-<header> <h1>Belvedere Landscaping</h1> <p>Premium Garden Transformations in Scotland</p> </header>
+    .sticky-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 15px;
+      box-shadow: var(--shadow-light);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
 
-<section class="section" id="services"> <h2>Our Services</h2> <div class="services-grid"> <div class="service-box"><h3>Garden Design</h3><p>Modern, elegant, functional outdoor spaces.</p></div> <div class="service-box"><h3>Patios & Decking</h3><p>Premium stone, wood and composite installations.</p></div> <div class="service-box"><h3>Fencing & Borders</h3><p>Strong, durable, aesthetic boundaries.</p></div> <div class="service-box"><h3>Full Renovations</h3><p>Complete garden transformations from start to finish.</p></div> </div> </section>
+    .sticky-cta a span {
+      font-size: 18px;
+    }
 
-<section class="video-gallery"> <h2>Project Videos</h2> <div class="video-grid"> <video controls preload="none"><source src="videos/video1.mp4" type="video/mp4"></video> <video controls preload="none"><source src="videos/video2.mp4" type="video/mp4"></video> <video controls preload="none"><source src="videos/video3.mp4" type="video/mp4"></video> <video controls preload="none"><source src="videos/video4.mp4" type="video/mp4"></video> <video controls preload="none"><source src="videos/video5.mp4" type="video/mp4"></video> </div> </section>
+    .sticky-cta a:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
 
-<section class="pricing"> <div class="pricing-box"> <h3>Pricing & Consultation</h3> <p>Book a professional on-site visit and get a full project evaluation.</p> <a href="#contact">Book a Visit</a> </div> </section>
+    /* Layout */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
 
-<section class="section" id="faq"> <h2>FAQ</h2> <div class="faq-item"><h4>How long does a project take?</h4><p>Most projects take 3–10 days depending on size.</p></div> <div class="faq-item"><h4>Do you offer full garden redesign?</h4><p>Yes, from concept to completion.</p></div> <div class="faq-item"><h4>Do you work in all weather?</h4><p>We operate year-round unless conditions are unsafe.</p></div> </section>
+    header {
+      position: relative;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 60px;
+      background: radial-gradient(circle at top left, #1f7a4d 0, #0b1720 55%);
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
 
-<section id="contact"> <h2>Contact</h2> <p>Call us or send a message to book a visit.</p> </section>
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      padding: 80px 24px 70px;
+      align-items: center;
+    }
 
-<footer> © 2026 Belvedere Landscaping — All Rights Reserved </footer>
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 70px 20px 60px;
+      }
+    }
 
-</body> </html>
+    .hero-copy h1 {
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+
+    @media (min-width: 900px) {
+      .hero-copy h1 {
+        font-size: 48px;
+      }
+    }
+
+    .hero-copy p {
+      font-size: 18px;
+      color: #e5e7eb;
+      margin: 0 0 24px;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .hero-badge {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.55);
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: #f3b340;
+      color: #111827;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-light);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      background: #f59e0b;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.35);
+      color: #e5e7eb;
+      font-size: 14px;
+      background: transparent;
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.6);
+      border-color: #f3b340;
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: #cbd5f5;
+      margin-top: 8px;
+    }
+
+    /* Hero video */
+    .hero-media {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #020617;
+    }
+
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.7));
+      pointer-events: none;
+    }
+
+    .hero-media-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #e5e7eb;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-media-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* Sections */
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-light);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(31, 122, 77, 0.35);
+    }
+
+    .service-title {
+      font-size: 18px;
+      margin: 0 0 6px;
+    }
+
+    .service-text {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Video gallery */
+    .video-gallery {
+      padding: 70px 0;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .video-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #020617;
+      transform: translateY(0);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .video-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.35);
+    }
+
+    .video-item video {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .video-tag {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      color: #e5e7eb;
+      font-size: 11px;
+    }
+
+    /* Pricing */
+    .pricing {
+      padding: 70px 0;
+    }
+
+    .pricing-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+
+    .pricing-title {
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    .pricing-text {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .pricing-highlight {
+      font-size: 14px;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 70px 0;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-light);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-quote {
+      font-size: 14px;
+      color: var(--text);
+      margin: 0 0 14px;
+    }
+
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .testimonial-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .testimonial-mark {
+      position: absolute;
+      right: 16px;
+      top: 10px;
+      font-size: 32px;
+      color: rgba(148, 163, 184, 0.25);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 70px 0;
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .faq-question {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+
+    .faq-answer {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Contact */
+    #contact {
+      padding: 70px 0 40px;
+    }
+
+    .contact-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-light);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+
+    .contact-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .contact-highlight {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .contact-channels {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 26px 20px 40px;
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta">
+    <a href="#contact">
+      <span>●</span>
+      Book a visit
+    </a>
+  </div>
+
+  <div class="page">
+    <!-- HERO -->
+    <header>
+      <div class="hero-inner">
+        <div class="hero-copy fade-in">
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Premium landscaping in Scotland
+            </div>
+            <div class="hero-badge">
+              5★ client feedback
+            </div>
+          </div>
+          <h1>Garden spaces that feel finished, not just done.</h1>
+          <p>Belvedere Landscaping delivers clean, modern outdoor spaces — from full garden renovations to patios, decking and fencing.</p>
+          <div class="hero-cta-row">
+            <a href="#contact" class="btn-primary">Book a site visit</a>
+            <a href="#videos" class="btn-ghost">Watch project videos</a>
+          </div>
+          <div class="hero-note">On-site visits available across Glasgow, Kilmarnock and surrounding areas.</div>
+        </div>
+
+        <div class="hero-media fade-in">
+          <!-- Hero video (loop, muted, click-to-play if browser blocks autoplay) -->
+          <video id="heroVideo" autoplay muted loop playsinline poster="hero.jpg">
+            <source src="videos/video1.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-media-overlay"></div>
+          <div class="hero-media-label">
+            <span class="hero-media-label-dot"></span>
+            Real project footage
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section class="section fade-in" id="services">
+      <div class="section-header">
+        <div class="section-kicker">Services</div>
+        <h2 class="section-title">Everything your garden needs, end to end.</h2>
+        <p class="section-subtitle">We focus on clean lines, durable materials and a finish that feels intentional — not improvised.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3 class="service-title">Full garden renovations</h3>
+          <p class="service-text">From overgrown or unused spaces to clean, structured gardens you actually want to spend time in.</p>
+        </article>
+        <article class="service-card">
+          <h3 class="service-title">Patios & hard landscaping</h3>
+          <p class="service-text">Premium paving, paths and seating areas that drain well, stay level and look sharp for years.</p>
+        </article>
+        <article class="service-card">
+          <h3 class="service-title">Decking & levels</h3>
+          <p class="service-text">Timber and composite solutions to handle slopes, create zones and extend your living space outdoors.</p>
+        </article>
+        <article class="service-card">
+          <h3 class="service-title">Fencing & boundaries</h3>
+          <p class="service-text">Solid, straight, long-lasting fencing that frames the garden instead of fighting it.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- VIDEO GALLERY -->
+    <section class="video-gallery fade-in" id="videos">
+      <div class="section-header">
+        <div class="section-kicker">Project videos</div>
+        <h2 class="section-title">See real gardens before they’re swept and staged.</h2>
+        <p class="section-subtitle">Short clips from real projects — so you can see the quality of work, not just final photos.</p>
+      </div>
+      <div class="video-grid">
+        <div class="video-item">
+          <span class="video-tag">Rear garden renovation</span>
+          <video controls preload="none">
+            <source src="videos/video1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-item">
+          <span class="video-tag">Patio & levels</span>
+          <video controls preload="none">
+            <source src="videos/video2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-item">
+          <span class="video-tag">Decking & access</span>
+          <video controls preload="none">
+            <source src="videos/video3.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-item">
+          <span class="video-tag">Front & side upgrade</span>
+          <video controls preload="none">
+            <source src="videos/video4.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video-item">
+          <span class="video-tag">Full transformation</span>
+          <video controls preload="none">
+            <source src="videos/video5.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing fade-in" id="pricing">
+      <div class="section-header">
+        <div class="section-kicker">Pricing & consultation</div>
+        <h2 class="section-title">Clear conversations before any ground is broken.</h2>
+        <p class="section-subtitle">Every garden is different. We start with a site visit, a walk-through and a straight answer on budget.</p>
+      </div>
+      <div class="pricing-card">
+        <h3 class="pricing-title">On-site visit & project outline</h3>
+        <p class="pricing-text">We visit your garden, discuss how you want to use the space, and outline options that actually fit the property.</p>
+        <div class="pricing-highlight">You get a clear scope, realistic timeline and an honest price range — no surprises halfway through.</div>
+        <a href="#contact" class="btn-primary">Book a visit</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials fade-in" id="testimonials">
+      <div class="section-header">
+        <div class="section-kicker">Testimonials</div>
+        <h2 class="section-title">What clients notice once the tools are gone.</h2>
+        <p class="section-subtitle">Most feedback we get is about how the garden feels to live with — not just how it looks on day one.</p>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-mark">“</div>
+          <p class="testimonial-quote">“The garden finally matches the house. Clean lines, no wasted corners, and it actually drains properly now.”</p>
+          <p class="testimonial-name">Sarah, Glasgow South</p>
+          <p class="testimonial-meta">Full rear garden renovation</p>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-mark">“</div>
+          <p class="testimonial-quote">“They didn’t just install a patio — they fixed levels, access and made it easy to maintain.”</p>
+          <p class="testimonial-name">Mark, Kilmarnock</p>
+          <p class="testimonial-meta">Patio, paths & fencing</p>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-mark">“</div>
+          <p class="testimonial-quote">“Communication was clear from day one. We always knew what was happening next and why.”</p>
+          <p class="testimonial-name">Emma, Ayrshire</p>
+          <p class="testimonial-meta">Front & rear upgrade</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq fade-in" id="faq">
+      <div class="section-header">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">Questions that usually come up before we start.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How far in advance should we book?</h3>
+          <p class="faq-answer">It depends on the season and project size. For full renovations, 4–8 weeks’ notice is ideal, but we’ll always tell you honestly what’s possible.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you handle everything or just parts of the job?</h3>
+          <p class="faq-answer">We can handle the full outdoor scope — from clearing and groundworks to patios, decking, fencing and finishing details.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What if the weather is bad?</h3>
+          <p class="faq-answer">We work year-round, but we won’t pour concrete or lay paving in conditions that would compromise the finish. If we need to pause, we’ll explain why and what it means for the schedule.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade-in">
+      <div class="section-header">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">One visit is usually enough to see what’s possible.</h2>
+        <p class="section-subtitle">Tell us where you are and how you use your garden now — we’ll take it from there.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-highlight">Book a visit or send photos of your garden.</div>
+        <p class="contact-channels">Phone / WhatsApp: <strong>+44&nbsp;[your number]</strong></p>
+        <p class="contact-channels">Email: <strong>[your email]</strong></p>
+        <p>Share a few photos, a rough idea of budget and what isn’t working right now. We’ll reply with realistic options, not a generic brochure.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2026 Belvedere Landscaping — Premium garden transformations in Scotland.
+    </footer>
+  </div>
+
+  <script>
+    // Simple fade-in on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    // Fallback: if hero video can't autoplay, allow click-to-play
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+      heroVideo.addEventListener('play', () => {
+        // no-op, just to ensure event binding
+      });
+      heroVideo.addEventListener('click', () => {
+        if (heroVideo.paused) {
+          heroVideo.play();
+        } else {
+          heroVideo.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
