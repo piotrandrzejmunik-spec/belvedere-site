@@ -21,7 +21,6 @@
       padding: 40px 20px 80px;
     }
 
-    /* GLOBAL WINDOW STYLE */
     .window {
       background: #ffffff;
       border-radius: 22px;
@@ -31,7 +30,6 @@
       color: #222;
     }
 
-    /* TOP BAR */
     header {
       margin-bottom: 40px;
     }
@@ -59,7 +57,6 @@
       color: #c7d2cc;
     }
 
-    /* HERO WINDOW */
     .hero-window {
       background: #ffffff;
       border-radius: 22px;
@@ -124,7 +121,6 @@
       font-weight: 600;
     }
 
-    /* SECTION HEADERS */
     .section-kicker {
       font-size: 0.95rem;
       color: #2a5bd7;
@@ -146,7 +142,6 @@
       margin-bottom: 30px;
     }
 
-    /* CARDS */
     .cards-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -185,7 +180,6 @@
       color: #444;
     }
 
-    /* CONTACT */
     .contact-title {
       font-size: 1.8rem;
       font-weight: 800;
@@ -213,7 +207,6 @@
       text-transform: uppercase;
     }
 
-    /* DESKTOP */
     @media (min-width: 720px) {
       .cards-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -222,6 +215,68 @@
       .hero-title {
         font-size: 3rem;
       }
+    }
+
+    /* SLIDER X2 */
+    .slider-zoom-container {
+      position: relative;
+      overflow: hidden;
+      perspective: 1400px;
+      margin-top: 20px;
+    }
+
+    .slider-zoom-track {
+      display: flex;
+      transition: transform 0.7s ease;
+    }
+
+    .slide-zoom {
+      min-width: 100%;
+      height: 320px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      transform: scale(0.8) rotateY(18deg);
+      opacity: 0.55;
+      transition: all 0.7s ease;
+    }
+
+    .slide-zoom.active {
+      transform: scale(1) rotateY(0deg);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .slide-zoom.prev {
+      transform: scale(0.75) rotateY(-18deg) translateX(-40px);
+      opacity: 0.45;
+    }
+
+    .slide-zoom.next {
+      transform: scale(0.75) rotateY(18deg) translateX(40px);
+      opacity: 0.45;
+    }
+
+    .slider-zoom-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.85);
+      border: none;
+      font-size: 2rem;
+      padding: 6px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .slider-zoom-btn.left { left: 12px; }
+    .slider-zoom-btn.right { right: 12px; }
+
+    @media (min-width: 720px) {
+      .slide-zoom { height: 420px; }
     }
   </style>
 </head>
@@ -241,7 +296,6 @@
       </div>
     </header>
 
-    <!-- HERO WINDOW -->
     <div class="hero-window">
       <div class="hero-company">BELVEDERE GARDEN DESIGN LTD</div>
 
@@ -264,7 +318,6 @@
       </div>
     </div>
 
-    <!-- SERVICES WINDOW -->
     <div class="window">
       <div class="section-kicker">Services</div>
       <h2>Everything your garden project needs</h2>
@@ -342,7 +395,6 @@
       </div>
     </div>
 
-    <!-- AOIG PROCESS MODULE -->
     <div class="window">
       <div class="section-kicker">Our process</div>
       <h2>Plan → Build → Care</h2>
@@ -350,7 +402,6 @@
         A clear, calm, three‑step process that keeps your project organised, predictable and stress‑free.
       </div>
 
-      <!-- PLAN -->
       <div class="card" style="margin-bottom: 26px;">
         <div class="card-title">PLAN</div>
         <div class="card-text">
@@ -365,7 +416,6 @@
         </ul>
       </div>
 
-      <!-- BUILD -->
       <div class="card" style="margin-bottom: 26px;">
         <div class="card-title">BUILD</div>
         <div class="card-text">
@@ -380,7 +430,6 @@
         </ul>
       </div>
 
-      <!-- CARE -->
       <div class="card">
         <div class="card-title">CARE</div>
         <div class="card-text">
@@ -396,7 +445,27 @@
       </div>
     </div>
 
-    <!-- CONTACT WINDOW -->
+    <!-- AOIG 3D ZOOM-IN SLIDER + AUTO-ROTATE -->
+    <div class="window">
+      <div class="section-kicker">Gallery</div>
+      <h2>Recent work</h2>
+      <div class="section-subtitle">
+        A premium 3D slider with zoom‑in focus and automatic rotation. Smooth, modern and clean.
+      </div>
+
+      <div class="slider-zoom-container">
+        <div class="slider-zoom-track">
+          <div class="slide-zoom" style="background-image: url('img/photo1.jpg');"></div>
+          <div class="slide-zoom" style="background-image: url('img/photo2.jpg');"></div>
+          <div class="slide-zoom" style="background-image: url('img/photo3.jpg');"></div>
+          <div class="slide-zoom" style="background-image: url('img/photo4.jpg');"></div>
+        </div>
+
+        <button class="slider-zoom-btn left" onclick="manualZoom(-1)">‹</button>
+        <button class="slider-zoom-btn right" onclick="manualZoom(1)">›</button>
+      </div>
+    </div>
+
     <div class="window">
       <div class="contact-title">Ready to improve your garden?</div>
       <div class="contact-subtitle">Message us or book a call – we’ll walk the space, discuss ideas and give you a clear next step.</div>
@@ -413,5 +482,61 @@
     </footer>
 
   </div>
+
+<script>
+  let zoomIndex = 0;
+  let autoRotate;
+
+  function updateZoom() {
+    const slides = document.querySelectorAll('.slide-zoom');
+    const track = document.querySelector('.slider-zoom-track');
+    const total = slides.length;
+
+    slides.forEach(slide => {
+      slide.classList.remove('active', 'prev', 'next');
+    });
+
+    const prev = (zoomIndex - 1 + total) % total;
+    const next = (zoomIndex + 1) % total;
+
+    slides[zoomIndex].classList.add('active');
+    slides[prev].classList.add('prev');
+    slides[next].classList.add('next');
+
+    track.style.transform = `translateX(-${zoomIndex * 100}%)`;
+  }
+
+  function moveZoom(direction) {
+    const slides = document.querySelectorAll('.slide-zoom');
+    const total = slides.length;
+
+    zoomIndex += direction;
+
+    if (zoomIndex < 0) zoomIndex = total - 1;
+    if (zoomIndex >= total) zoomIndex = 0;
+
+    updateZoom();
+  }
+
+  function startAutoRotate() {
+    autoRotate = setInterval(() => moveZoom(1), 4000);
+  }
+
+  function stopAutoRotate() {
+    clearInterval(autoRotate);
+  }
+
+  function manualZoom(direction) {
+    stopAutoRotate();
+    moveZoom(direction);
+    startAutoRotate();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateZoom();
+    startAutoRotate();
+  });
+</script>
+
 </body>
 </html>
