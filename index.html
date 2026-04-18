@@ -569,6 +569,30 @@ a, button, .card { transition: all 0.18s ease; }
 button:hover, a:hover { opacity: 0.85; }
 .card:hover { transform: translateY(-3px); }
 </style>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+section { margin-top: 48px; margin-bottom: 48px; }
+@media (max-width: 720px) { section { margin-top: 28px; margin-bottom: 28px; } }
+.hero { padding: 60px 24px; gap: 28px; text-align: left; }
+.hero-title { font-size: 2.4rem; line-height: 1.15; font-weight: 700; }
+.hero-subtitle { font-size: 1.05rem; line-height: 1.45; max-width: 540px; }
+@media (max-width: 720px) { .hero { padding: 32px 18px; gap: 20px; } .hero-title { font-size: 1.85rem; } .hero-subtitle { font-size: 0.92rem; } }
+.cards-grid { display: grid; gap: 22px; }
+@media (min-width: 900px) { .cards-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+.card { padding: 20px; border-radius: 16px; background: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+.card-icon { width: 40px; height: 40px; border-radius: 10px; background: #f2f7f2; font-size: 22px; color: #2f5f2f; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+.card-title { font-size: 1.1rem; margin-bottom: 6px; font-weight: 600; }
+.card-text { font-size: 0.92rem; line-height: 1.45; margin-bottom: 10px; }
+.card ul li { font-size: 0.86rem; line-height: 1.35; }
+.cta-shell { padding: 36px 32px; border-radius: 20px; background: #f7faf7; box-shadow: 0 3px 12px rgba(0,0,0,0.05); gap: 20px; }
+.cta-main-title { font-size: 1.25rem; font-weight: 600; }
+.cta-main-text { font-size: 0.95rem; line-height: 1.45; }
+@media (max-width: 720px) { .cta-shell { padding: 22px 18px; gap: 16px; } .cta-main-title { font-size: 1.05rem; } .cta-main-text { font-size: 0.88rem; } }
+footer { padding: 32px 0; font-size: 0.9rem; opacity: 0.85; text-align: center; }
+a, button, .card { transition: all 0.18s ease; }
+button:hover, a:hover { opacity: 0.85; }
+.card:hover { transform: translateY(-3px); }
+</style>
 </body>
 </html>
 
