@@ -540,3 +540,123 @@
 
 </body>
 </html>
+
+<!-- VIDEO GALLERY MODULE -->
+<section class="video-gallery">
+  <h2>Realizacje wideo</h2>
+
+  <div class="video-grid">
+    <div class="video-item" data-video="videos/video1.mp4">
+      <img src="thumbnails/video1.jpg" alt="Realizacja 1">
+    </div>
+
+    <div class="video-item" data-video="videos/video2.mp4">
+      <img src="thumbnails/video2.jpg" alt="Realizacja 2">
+    </div>
+
+    <div class="video-item" data-video="videos/video3.mp4">
+      <img src="thumbnails/video3.jpg" alt="Realizacja 3">
+    </div>
+
+    <div class="video-item" data-video="videos/video4.mp4">
+      <img src="thumbnails/video4.jpg" alt="Realizacja 4">
+    </div>
+
+    <div class="video-item" data-video="videos/video5.mp4">
+      <img src="thumbnails/video5.jpg" alt="Realizacja 5">
+    </div>
+  </div>
+</section>
+
+<div id="videoModal" class="video-modal">
+  <div class="video-modal-content">
+    <span class="video-close">&times;</span>
+    <video id="videoPlayer" controls autoplay></video>
+  </div>
+</div>
+
+<style>
+.video-gallery {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.video-gallery h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.video-item {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.video-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-item:hover {
+  transform: scale(1.03);
+}
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+}
+.video-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+#videoPlayer {
+  width: 100%;
+  border-radius: 12px;
+}
+</style>
+
+<script>
+document.querySelectorAll('.video-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const src = item.getAttribute('data-video');
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('videoPlayer');
+
+    player.src = src;
+    modal.style.display = 'flex';
+    player.play();
+  });
+});
+
+document.querySelector('.video-close').addEventListener('click', () => {
+  const modal = document.getElementById('videoModal');
+  const player = document.getElementById('videoPlayer');
+
+  player.pause();
+  player.src = "";
+  modal.style.display = 'none';
+});
+</script>
+
