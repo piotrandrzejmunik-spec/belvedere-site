@@ -836,6 +836,41 @@
 </style>
 
   </div>
+<style>
+/* GLOBAL SPACING */
+section { margin-top: 48px; margin-bottom: 48px; }
+@media (max-width: 720px) { section { margin-top: 28px; margin-bottom: 28px; } }
+
+/* HERO POLISH */
+.hero { padding: 60px 24px; gap: 28px; }
+.hero-title { font-size: 2.4rem; line-height: 1.15; }
+.hero-subtitle { font-size: 1.05rem; line-height: 1.45; max-width: 540px; }
+@media (max-width: 720px) {
+  .hero { padding: 32px 18px; gap: 20px; }
+  .hero-title { font-size: 1.85rem; }
+  .hero-subtitle { font-size: 0.92rem; }
+}
+
+/* CTA POLISH */
+.cta-shell { padding: 36px 32px; border-radius: 20px; background: #f7faf7; box-shadow: 0 3px 12px rgba(0,0,0,0.05); gap: 20px; }
+.cta-main-title { font-size: 1.25rem; font-weight: 600; }
+.cta-main-text { font-size: 0.95rem; line-height: 1.45; }
+@media (max-width: 720px) {
+  .cta-shell { padding: 22px 18px; gap: 16px; }
+  .cta-main-title { font-size: 1.05rem; }
+  .cta-main-text { font-size: 0.88rem; }
+}
+
+/* FOOTER POLISH */
+footer { padding: 32px 0; font-size: 0.9rem; opacity: 0.85; }
+.footer-left, .footer-links { gap: 10px; }
+@media (max-width: 720px) { footer { padding: 24px 0; font-size: 0.82rem; } }
+
+/* MICRO-MOTION */
+a, button, .card { transition: all 0.18s ease; }
+button:hover, a:hover { opacity: 0.85; }
+.card:hover { transform: translateY(-3px); }
+</style>
 </body>
 </html>
 
