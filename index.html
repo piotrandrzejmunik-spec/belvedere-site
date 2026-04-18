@@ -423,3 +423,55 @@ h2 {
 
 </style>
 
+
+<!-- MOTION ICONS FULL -->
+<style>
+
+/* Ikony i małe elementy – mikro slide + fade */
+.icon, .mini, .bullet-icon {
+  opacity: 0;
+  transform: translateX(-6px);
+  animation: iconIn 0.55s ease forwards;
+}
+
+/* Stagger dla ikon */
+.icon:nth-child(1), .mini:nth-child(1), .bullet-icon:nth-child(1) { animation-delay: 0.15s; }
+.icon:nth-child(2), .mini:nth-child(2), .bullet-icon:nth-child(2) { animation-delay: 0.22s; }
+.icon:nth-child(3), .mini:nth-child(3), .bullet-icon:nth-child(3) { animation-delay: 0.29s; }
+.icon:nth-child(4), .mini:nth-child(4), .bullet-icon:nth-child(4) { animation-delay: 0.36s; }
+.icon:nth-child(5), .mini:nth-child(5), .bullet-icon:nth-child(5) { animation-delay: 0.43s; }
+
+/* Bullet list – mikro motion */
+ul li {
+  opacity: 0;
+  transform: translateX(-4px);
+  animation: bulletIn 0.45s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* Mini karty – mikro scale + fade */
+.mini-card {
+  opacity: 0;
+  transform: scale(0.97);
+  animation: miniCardIn 0.55s ease forwards;
+  animation-delay: 0.25s;
+}
+
+/* Animacje */
+@keyframes iconIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bulletIn {
+  from { opacity: 0; transform: translateX(-4px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes miniCardIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+</style>
+
